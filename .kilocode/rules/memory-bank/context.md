@@ -1,87 +1,64 @@
-# Active Context: Next.js Starter Template
+# Active Context: Billa Store Locator Mobile App
 
 ## Current State
 
-**Template Status**: ✅ Ready for development
+**Project Status**: ✅ Mobile app created with React Native + Expo
 
-The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. It's ready for AI-assisted expansion to build any type of application.
+The project is a React Native mobile app built with Expo SDK 56 that helps users find Billa stores with last-day expiring offers (30% off stickers in physical stores).
 
 ## Recently Completed
 
-- [x] Base Next.js 16 setup with App Router
-- [x] TypeScript configuration with strict mode
-- [x] Tailwind CSS 4 integration
-- [x] ESLint configuration
-- [x] Memory bank documentation
-- [x] Recipe system for common features
+- [x] Created React Native project with Expo (mobile/billa-app)
+- [x] Added react-native-maps for map display
+- [x] Added expo-location for user location
+- [x] Built store locator screen with interactive map
+- [x] Added mock Billa store data for Austria (Vienna, Graz, Linz, Salzburg, Innsbruck)
+- [x] Implemented distance calculation and sorting by proximity
+- [x] Added visual indicators for stores with expiring offers (30% off badge)
+- [x] Fixed TypeScript errors and passed typecheck
+- [x] Web export builds successfully
+- [x] Initialized git repository and committed changes
 
 ## Current Structure
 
 | File/Directory | Purpose | Status |
 |----------------|---------|--------|
-| `src/app/page.tsx` | Home page | ✅ Ready |
-| `src/app/layout.tsx` | Root layout | ✅ Ready |
-| `src/app/globals.css` | Global styles | ✅ Ready |
-| `.kilocode/` | AI context & recipes | ✅ Ready |
+| `mobile/billa-app/src/app/index.tsx` | Main store locator screen with map | ✅ Complete |
+| `mobile/billa-app/src/data/stores.ts` | Mock store data & distance logic | ✅ Complete |
+| `mobile/billa-app/src/constants/theme.ts` | Theme colors, spacing, fonts | ✅ Complete |
+| `mobile/billa-app/src/app/_layout.tsx` | Stack navigation layout | ✅ Complete |
+| `mobile/billa-app/package.json` | Dependencies & scripts | ✅ Complete |
 
-## Current Focus
+## Key Features Implemented
 
-The template is ready. Next steps depend on user requirements:
+1. **Map View**: Interactive map showing nearby Billa stores with markers
+2. **User Location**: Gets current location via expo-location (with fallback to Vienna)
+3. **Store List**: Scrollable list of stores sorted by distance
+4. **Expiring Offers Badge**: Red "30% Off Today" badge on stores with expiring offers
+5. **Store Details**: Shows store name, address, and distance from user
+6. **Map Interaction**: Tap store in list to center map on that store
 
-1. What type of application to build
-2. What features are needed
-3. Design/branding preferences
+## Tech Stack
 
-## Quick Start Guide
-
-### To add a new page:
-
-Create a file at `src/app/[route]/page.tsx`:
-```tsx
-export default function NewPage() {
-  return <div>New page content</div>;
-}
-```
-
-### To add components:
-
-Create `src/components/` directory and add components:
-```tsx
-// src/components/ui/Button.tsx
-export function Button({ children }: { children: React.ReactNode }) {
-  return <button className="px-4 py-2 bg-blue-600 text-white rounded">{children}</button>;
-}
-```
-
-### To add a database:
-
-Follow `.kilocode/recipes/add-database.md`
-
-### To add API routes:
-
-Create `src/app/api/[route]/route.ts`:
-```tsx
-import { NextResponse } from "next/server";
-
-export async function GET() {
-  return NextResponse.json({ message: "Hello" });
-}
-```
-
-## Available Recipes
-
-| Recipe | File | Use Case |
-|--------|------|----------|
-| Add Database | `.kilocode/recipes/add-database.md` | Data persistence with Drizzle + SQLite |
-
-## Pending Improvements
-
-- [ ] Add more recipes (auth, email, etc.)
-- [ ] Add example components
-- [ ] Add testing setup recipe
+- **Framework**: React Native with Expo SDK 56
+- **Routing**: Expo Router (Stack navigation)
+- **Maps**: react-native-maps with Google Maps provider
+- **Location**: expo-location
+- **Language**: TypeScript (strict mode)
+- **Styling**: StyleSheet with themed colors
+- **Package Manager**: bun
 
 ## Session History
 
 | Date | Changes |
 |------|---------|
-| Initial | Template created with base setup |
+| 2026-06-04 | Created mobile app with store locator feature |
+
+## Next Steps (Future Enhancements)
+
+- [ ] Add real Billa store API integration
+- [ ] Add user submissions for expiring offers
+- [ ] Add push notifications for nearby expiring offers
+- [ ] Add product-level detail (which specific products have 30% off)
+- [ ] Add offline support with cached store data
+- [ ] Add search/filter functionality
